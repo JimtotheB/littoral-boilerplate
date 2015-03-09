@@ -1,0 +1,17 @@
+extends ./base
+include mixins
+
+block header
+  .container-fluid
+    .row
+      .col-sm-12
+        h1.text-center Welcome to #{site.name}
+
+block pageContent
+  .container-fluid
+    .row
+      .col-sm-12
+        h3.text-center #{site.description}
+    .row
+      each app, index in apps
+          +demoBox(app.name, app.description, app.basePath, app.teaserImage)

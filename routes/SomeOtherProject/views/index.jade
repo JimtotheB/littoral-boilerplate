@@ -1,0 +1,20 @@
+extends /base
+include /mixins
+block header
+  .container-fluid
+    .row
+      .col-sm-12
+        h1.text-center #{app.name}
+
+block pageContent
+  .container
+    .row
+      .col-sm-2
+      .col-sm-8
+       h1 Here is my other cool demo.
+    .row
+      .col-sm-12
+        img.thumbnail(src="#{app.teaserImage}")
+
+block scripts
+  script(src='#{app.basePath}/js/main.js')
