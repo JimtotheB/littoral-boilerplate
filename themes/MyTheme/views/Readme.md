@@ -1,0 +1,1 @@
+This contains all of the main Jade files your sub-applications will extend.
