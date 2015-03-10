@@ -13,8 +13,9 @@ block pageContent
       .col-sm-8
        h1.text-center Here is my cool demo.
     .row
-      .col-sm-12
+      .col-sm-6
         img.thumbnail(src="#{app.teaserImage}")
-
+      .col-sm-6
+        include content
 block scripts
   script(src='#{app.basePath}/js/main.js')
