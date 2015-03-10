@@ -16,6 +16,28 @@ block pageContent
       .col-sm-6
         img.thumbnail(src="#{app.teaserImage}")
       .col-sm-6
-        include content
+        .row
+          .col-sm-12
+            h1 Variables available on this page.
+            pre description:
+              | This is a bare value set by passing an object as the second
+              | parameter to res.render('template', obj)
+              | It is highly suggested to nest these values if they are at all complex.
+              | ie: res.render('index', {request: {description: 'value', someOther: 'otherValue'}}
+              pre
+                code description: #{description}
+            pre app:
+              pre
+                each y, k in app
+                  code #{k}: #{y}
+                  br/
+            pre site:
+              pre
+                each a, b in site
+                  code #{b}: #{a}
+                  br/
+        .row
+          .col-sm-12
+            include content
 block scripts
   script(src='#{app.basePath}/js/main.js')

@@ -13,5 +13,19 @@ block pageContent
       .col-sm-12
         h3.text-center #{site.description}
     .row
-      each app, index in apps
+      .col-sm-6
+        each app, index in apps
           +demoBox(app.name, app.description, app.basePath, app.teaserImage)
+      .col-sm-6
+        h1 Variables available on this page.
+          pre apps:
+            each x in apps
+              pre
+                each y, k in x
+                  code #{k}: #{y}
+                  br/
+          pre site:
+            pre
+              each a, b in site
+                code #{b}: #{a}
+                br/

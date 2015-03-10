@@ -9,12 +9,33 @@ block header
 block pageContent
   .container
     .row
-      .col-sm-2
-      .col-sm-8
-       h1 Here is my other cool demo.
-    .row
       .col-sm-12
+        h1.text-center Here is my other cool demo.
+    .row
+      .col-sm-6
         img.thumbnail(src="#{app.teaserImage}")
+      .col-sm-6
+          h1 Variables available on this page.
+          pre request:
+            | This is a wrapped value set by passing an object as the second
+            | parameter to res.render('template', obj)
+            | Here we are nesting these variables in a secondary object,
+            | to avoid clobbering anything inadvertently.
+            pre
+              each y, k in request
+                code #{k}: #{y}
+                br/
+
+          pre app:
+            pre
+              each y, k in app
+                code #{k}: #{y}
+                br/
+          pre site:
+            pre
+              each a, b in site
+                code #{b}: #{a}
+                br/
 
 block scripts
   script(src='#{app.basePath}/js/main.js')
